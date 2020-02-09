@@ -1,0 +1,32 @@
+/* State Styles */
+@import '../variables';
+
+.state-content {
+    margin-top: 1em;
+}
+
+.pattern {
+    width: 90%;
+    max-width: 55em;
+    height: 3em;
+    border: none;
+    box-shadow: 0 2px 10px 4px $shadow;
+    transition: .3s;
+    padding-left: 1em;
+    animation: fade .3s forwards;
+    &:focus {
+        outline: none;
+        box-shadow: 0 2px 10px 2px $primary;
+    }
+}
+
+@keyframes fade {
+    0%{
+        // transform: translateX(50em);
+        transform: scale(0);
+    }
+    100%{
+        // transform: translateX(0);                
+        transform: scale(1);
+    }
+}

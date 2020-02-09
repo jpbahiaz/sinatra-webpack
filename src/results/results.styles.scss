@@ -1,0 +1,127 @@
+@import '../variables';
+@font-face {
+    font-family: 'Satisfy';
+    src:  url('../../fonts/Satisfy-Regular.ttf');
+}
+
+.last-results {
+    // background-color: lightblue;
+    margin-right: 1em;
+    flex: 30%;
+
+    display: flex;
+    flex-flow: column;
+}
+.no-last-results {
+    color: $light;
+    text-align: center;
+    font-family: 'Satisfy', cursive;
+    font-size: 25px;
+    margin-top: 1em;
+}
+
+.result {
+    flex: 70%;
+    max-width: 70%;
+    background-color: $light;
+    margin: .5em;
+    box-shadow: 0 2px 10px 4px #0e000070;
+    overflow: hidden;
+    overflow-y: auto;
+}
+
+.result-item {
+    margin: .5em;
+    height: 3em;
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
+    align-items: center;
+
+    background-color: $light;
+    box-shadow: 0 2px 10px 4px #0e000070;
+    font-family: 'Satisfy', cursive;
+    font-size: 18px;
+    transition: .3s ease-out;
+    cursor: pointer;
+    &:hover {
+        box-shadow: 0 2px 10px 2px #0e000070;
+        transform: translateX(1.5em);
+    }
+}
+
+.current-result {
+    background-color: $primary;
+    transform: translateX(1em);
+    color: $light;
+}
+
+.result-title{
+    font-family: 'Satisfy', cursive;
+    font-size: 30px;
+    text-align: center;
+    text-shadow: 0px 13px 20px #0e000070;
+    margin-top: .5em;
+
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
+}
+
+.txt-button{
+    border: none;
+    margin-right: 3em;
+}
+
+.fasta-button{
+    border: none;
+    margin-left: 3em;
+}
+
+.fasta-button, .txt-button {
+    background-color: $secondary;
+    color: $light;
+    box-shadow: 0 2px 10px 4px $shadow;
+    transition: .3s ease-out;
+    cursor: pointer;
+    font-weight: bold;
+    &:hover{
+        background-color: $strong;
+        box-shadow: 0 2px 10px 2px $shadow;
+        transform: translateY(-.3em);
+    }
+}
+
+// Result body
+.result-body{
+    margin-bottom: 1em;
+}
+
+.result-content{
+    background-color: $secondary;
+    margin: 1em 1em 0em 1em;
+    box-shadow: 0 2px 10px 4px $shadow;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+}
+
+.result-details {
+    overflow: hidden;
+    overflow-y: auto;
+    overflow-wrap: break-word;
+    background-color: $light;
+    box-shadow: 0 2px 10px 0px #0e000070; //#0a0a0a99;
+
+    margin: 1em;
+    width: 90%;
+    max-height: 10em;
+    padding: 1em;
+}
+
+.result-sequence-id {
+    color: $light;
+    margin-top: .5em;
+    text-shadow: 0 3px 12px #0e000070;
+    max-width: 90%;
+}

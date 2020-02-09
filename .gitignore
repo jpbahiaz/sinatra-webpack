@@ -1,0 +1,9 @@
+node_modules
+
+
+# Upload files
+public
+
+# Test files
+*.fas
+*.fasta
