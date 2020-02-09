@@ -7,5 +7,10 @@ self.addEventListener('message', function(e){
 	// a fluid UX to the user always
 
 	// Big calculations and complex code here... Ex: 
-	for (let index = 0; index < 1000000; index++) {}
+	this.console.group('Calculation')
+	for (let index = 0; index < 5000; index++) {
+		console.log("Calculating....",)
+	}
+	this.console.groupEnd('Calculation')
+	console.log(`Hi from Example Worker! Here is your data:`, e.data)
 });

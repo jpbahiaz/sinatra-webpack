@@ -1,5 +1,5 @@
 import './shared-styles.scss'
-import { StateController } from './states/states.controller'
+import { WorkersController } from './controllers/workers.controller'
 import runtime from 'serviceworker-webpack-plugin/lib/runtime';
 import registerEvents from 'serviceworker-webpack-plugin/lib/browser/registerEvents'
 
@@ -41,7 +41,11 @@ const App = (function(){
         init: function(){
             installSw();
             eventListeners();
-            StateController.init();
+            WorkersController.init();
+
+            WorkersController.sendData({
+                prop: "Hi worker"
+            })
 
             // Show content only after everything is loaded
             document.addEventListener('DOMContentLoaded', function(){

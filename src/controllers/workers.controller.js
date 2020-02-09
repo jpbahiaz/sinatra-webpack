@@ -1,27 +1,22 @@
 // Initially one file, modularize if necessary
-import './states.styles.scss';
 import { ExampleService } from '../services/example.service'
 import ExampleWorker from '../workers/example.worker';
 
-export const StateController = (function(){
+export const WorkersController = (function(){
 
-    const appState = {
-        currentState: null,
-        content: {
-            text: null,
-            file: null
-        },
-        codonTable: codonTable
-    };
-
-    const worker = new AnalyzerWorker();
+    const worker = new ExampleWorker();
     worker.addEventListener('message', function(data){
         // Add ResultController handler to show the results
         console.log(data)
     });
 
-    worker.postMessage();
+    function sendData(data){
+        worker.postMessage(data);
+    }
     return {
-
+        sendData,
+        init: () => {
+            console.log("Initializing WorkersController")
+        }
     }
 })();
