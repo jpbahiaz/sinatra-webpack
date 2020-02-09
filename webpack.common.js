@@ -15,7 +15,7 @@ module.exports = {
   plugins: [
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
-      title: 'phtK',
+      title: 'Sinatra Webpack',
       template: './src/index.html'
     }),
     new ServiceWorkerWebpackPlugin({
@@ -36,19 +36,19 @@ module.exports = {
               'sass-loader',
           ]
       },
-      {
+      { // If you need to parse images
         test: /\.(png|svg|jpg|gif)$/,
         use: [
           'file-loader'
         ]
       },
-      {
+      { // If you need local fonts
         test: /\.(woff|woff2|eot|ttf|otf)$/,
         use: [
           'file-loader'
         ]
       },
-      {
+      { // Shows your web workers to webpack
         test: /\.worker\.js$/,
         use: { loader: 'worker-loader' }
       },
