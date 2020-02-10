@@ -1,1 +1,44 @@
 @import 'variables';
+
+.app {
+	display: none;
+	flex-flow: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.animation {
+	width: 200px;
+	height: 200px;
+	padding-top: 10px;
+
+	background-color: $strong;
+	color: white;
+	text-align: center;
+
+	border-radius: 5px;
+	animation: simple-animation 5s alternate infinite;
+}
+
+@keyframes simple-animation {
+	0% {
+		box-shadow: 0 0 0 0 black;
+		transform: translateY(0);
+	}
+	25% {
+		box-shadow: 0 12px 20px 2px black;
+		transform: translateY(100px);
+	}
+	50% {
+		box-shadow: 0 0 0 0 black;
+		transform: translateY(200px);
+	}
+	75% {
+		box-shadow: 0 12px 20px 2px black;
+		transform: translateY(300px);
+	}
+	100% {
+		box-shadow: 0 0 0 0 black;
+		transform: translateY(500px);
+	}
+}

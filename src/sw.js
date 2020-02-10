@@ -16,7 +16,7 @@ let assetsToCache = [...assets, './']
 
 assetsToCache = assetsToCache.map(path => {
   return new URL(path, global.location).toString()
-});
+})
 
 // When the service worker is first added to a computer.
 self.addEventListener('install', event => {
@@ -42,7 +42,7 @@ self.addEventListener('install', event => {
         throw error
       })
   )
-});
+})
 
 // After the install event.
 self.addEventListener('activate', event => {
@@ -65,7 +65,7 @@ self.addEventListener('activate', event => {
       )
     })
   )
-});
+})
 
 self.addEventListener('message', event => {
   switch (event.data.action) {
@@ -78,7 +78,7 @@ self.addEventListener('message', event => {
     default:
       break
   }
-});
+})
 
 self.addEventListener('fetch', event => {
   const request = event.request
@@ -155,4 +155,4 @@ self.addEventListener('fetch', event => {
   })
 
   event.respondWith(resource)
-});
+})

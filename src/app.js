@@ -1,58 +1,62 @@
-import './shared-styles.scss'
 import { WorkersController } from './controllers/workers.controller'
-import runtime from 'serviceworker-webpack-plugin/lib/runtime';
+import { ExampleService } from './services/example.service'
+import runtime from 'serviceworker-webpack-plugin/lib/runtime'
 import registerEvents from 'serviceworker-webpack-plugin/lib/browser/registerEvents'
 
+import './shared-styles.scss'
 // import './background.jpg' -> Remember to import images and css in any file that webpack bundles
 
-const App = (function(){
-    function eventListeners(){
-        console.log('eventListeners')
-    }
+const App = (function () {
+	function eventListeners() {
+		console.log('eventListeners')
+	}
 
-    function installSw(){
-        if ('serviceWorker' in navigator) {
-            const registration = runtime.register()
-        
-            registerEvents(registration, {
-                onInstalled: () => {
-                console.log('onInstalled')
-                },
-                onUpdateReady: () => {
-                console.log('onUpdateReady')
-                },
-        
-                onUpdating: () => {
-                console.log('onUpdating')
-                },
-                onUpdateFailed: () => {
-                console.log('onUpdateFailed')
-                },
-                onUpdated: () => {
-                console.log('onUpdated')
-                },
-            })
-        } else {
-            console.log('serviceWorker not available')
-        }
-    }
+	function installSw() {
+		if ('serviceWorker' in navigator) {
+			const registration = runtime.register()
 
-    return {
-        init: function(){
-            installSw();
-            eventListeners();
-            WorkersController.init();
+			registerEvents(registration, {
+				onInstalled: () => {
+					console.log('onInstalled')
+				},
+				onUpdateReady: () => {
+					console.log('onUpdateReady')
+				},
+				onUpdating: () => {
+					console.log('onUpdating')
+				},
+				onUpdateFailed: () => {
+					console.log('onUpdateFailed')
+				},
+				onUpdated: () => {
+					console.log('onUpdated')
+				},
+			})
+		} else {
+			console.log('serviceWorker not available')
+		}
+	}
 
-            WorkersController.sendData({
-                prop: "Hi worker"
-            })
+	return {
+		init: function () {
+			installSw()
+			eventListeners()
+			WorkersController.init()
 
-            // Show content only after everything is loaded
-            document.addEventListener('DOMContentLoaded', function(){
-                document.querySelector('.app').style.display = 'flex';
-            });
-        }
-    }
-})();
+			WorkersController.sendData({
+				prop: "Hi worker"
+			})
 
-App.init();
+			WorkersController.addListener((message) => {
+				console.log(message.data)
+			})
+
+			// Show content only after everything is loaded
+			document.addEventListener('DOMContentLoaded', () => {
+				document.querySelector('.app').style.display = 'flex'
+			})
+		}
+	}
+})()
+
+App.init()

@@ -1,22 +1,22 @@
 // Initially one file, modularize if necessary
-import { ExampleService } from '../services/example.service'
-import ExampleWorker from '../workers/example.worker';
+import ExampleWorker from '../workers/example.worker'
 
 export const WorkersController = (function(){
 
-    const worker = new ExampleWorker();
-    worker.addEventListener('message', function(data){
-        // Add ResultController handler to show the results
-        console.log(data)
-    });
+    const worker = new ExampleWorker()
+    
+    function addListener(fn){
+        worker.addEventListener('message', fn)
+    }
 
     function sendData(data){
-        worker.postMessage(data);
+        worker.postMessage(data)
     }
     return {
         sendData,
+        addListener,
         init: () => {
             console.log("Initializing WorkersController")
         }
     }
-})();
+})()
