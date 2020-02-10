@@ -1,7 +1,9 @@
 # Sinatra Webpack Example App
 
 This app uses [Sinatra](http://sinatra-org-book.herokuapp.com/) and [Webpack](https://webpack.js.org/guides/)
-to create a simple pure JS single page application. It uses [Module Pattern](https://dev.to/tomekbuszewski/module-pattern-in-javascript-56jm) to describe controllers that encapsulates application logic and functionality.
+to create a simple pure JS single page application. It uses [Module Pattern](https://dev.to/tomekbuszewski/module-pattern-in-javascript-56jm) to describe controllers that encapsulates application logic and functionality. For more information about Service and Web workers check these links from MDN:
+- [Web Workers](https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API/Using_web_workers)
+- [Service Workers](https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API/Using_Service_Workers)
 
 ## Instalation
 Just run ```npm install``` and ```bundle install``` on your console. Make sure you have **NodeJs 10+** and **Ruby 2.5+** installed. If that's not the case here is some links that can help:
