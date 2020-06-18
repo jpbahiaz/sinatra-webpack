@@ -20,22 +20,22 @@ All packages needed to load and bundle your app to a single
 file.
 ```javascript
 {
-	"@babel/core": "^7.8.4",
-	"@babel/preset-env": "^7.8.4",
-	"babel-loader": "^8.0.6",
-	"clean-webpack-plugin": "^3.0.0",
-	"css-loader": "^3.4.2",
-	"file-loader": "^4.3.0",
-	"html-webpack-plugin": "^3.2.0",
-	"node-sass": "^4.13.1",
-	"sass-loader": "^7.3.1",
-	"serviceworker-webpack-plugin": "^1.0.1",
-	"style-loader": "^1.1.3",
-	"webpack": "^4.41.5",
-	"webpack-cli": "^3.3.10",
-	"webpack-dev-server": "^3.10.3",
-	"webpack-merge": "^4.2.2",
-	"worker-loader": "^2.0.0"
+	"@babel/core": "",
+	"@babel/preset-env": "",
+	"babel-loader": "",
+	"clean-webpack-plugin": "",
+	"css-loader": "",
+	"file-loader": "",
+	"html-webpack-plugin": "",
+	"node-sass": "",
+	"sass-loader": "",
+	"serviceworker-webpack-plugin": "",
+	"style-loader": "",
+	"webpack": "",
+	"webpack-cli": "",
+	"webpack-dev-server": "",
+	"webpack-merge": "",
+	"worker-loader": "",
 }
  ```
 - **Babel:** Let you use all the beautiful JS features
