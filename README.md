@@ -38,8 +38,8 @@ file.
 	"worker-loader": "^2.0.0"
 }
  ```
-- **Babel:** Let you use all the beautiful JS features we know.
-- **Clean Webpack Plugin:** Make sure to wipe dist before bundling
+- **Babel:** Let you use all the beautiful JS features
+- **Clean Webpack Plugin:** Make sure to wipe ```/dist``` folder before bundling
 - **Css, Style and Sass Loaders:** Helps bundling ```/.s?css/``` files
 - **File Loader:** Helps webpack to link your fonts and images to your code
 - **HTML Plugin:** Inserts your index.html template to the final bundle
